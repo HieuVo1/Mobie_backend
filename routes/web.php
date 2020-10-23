@@ -13,7 +13,6 @@
 
 
 Route::get('/', function() {
-    Artisan::call('config:cache');
     return redirect('admin/login');
 });
 
