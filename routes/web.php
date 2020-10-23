@@ -18,7 +18,6 @@ Route::get('/', function() {
 });
 
 
-
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get("/login","Admincontroller@showlogin")->name("showlogin");
@@ -35,7 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post("updateprofile","Admincontroller@updateprofile")->name("updateprofile")->middleware('admincheckexiste');
       //end profile
 
-      Route::get("confirmregister/{id}","UserController@confirmregister");
+      Route::get("confirmregister/{id}","UserController@confirmregister")->name("confirmregister");
        
       //password change 
       Route::get("changepassword","Admincontroller@changepassword")->name("changepassword")->middleware('admincheckexiste');
