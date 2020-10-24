@@ -19,7 +19,7 @@ Route::get('/', function() {
 
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::get("login","Admincontroller@showlogin")->name("showlogin");
+    Route::get('login','Admincontroller@showlogin');
     Route::post("postlogin","Admincontroller@postlogin")->name("postlogin");
 
     Route::group(['middleware' => ['admincheckexiste']], function () {
