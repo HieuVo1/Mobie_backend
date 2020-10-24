@@ -16,9 +16,9 @@ use Auth;
 class Admincontroller extends Controller {
   
    public function showlogin(){
-       parent::callschedule();
-       $setting=Setting::find(1);
-       Session::put("is_demo",$setting->is_demo);
+    //    parent::callschedule();
+    //    $setting=Setting::find(1);
+    //    Session::put("is_demo",$setting->is_demo);
        return view("admin.login");
    }
 
