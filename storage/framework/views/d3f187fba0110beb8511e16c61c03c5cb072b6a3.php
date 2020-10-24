@@ -1,0 +1,1 @@
+<?php echo e(__('messages.Hello')); ?> <?php echo e($user->first_name); ?> <?php echo e($user->last_name); ?><?php /**PATH D:\Learning\4th\Mobie\UploadingContentV1.0\PHPScript\PHPScript\resources\views\email\view_order.blade.php ENDPATH**/ ?>
