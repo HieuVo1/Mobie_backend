@@ -62,7 +62,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admincheckexiste' => \App\Http\Middleware\admincheckexiste::class,
-        'usercheckexiste'=>\App\Http\Middleware\usercheckexiste::class,
+        'sercheckexiste'=>\App\Http\Middleware\usercheckexiste::class,
         'XSS' => \App\Http\Middleware\XSS::class,
     ];
 
