@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('test', function() {
+Route::get('', function() {
   return view("admin.login");
 });
 

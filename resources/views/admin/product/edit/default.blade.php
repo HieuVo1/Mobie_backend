@@ -1,6 +1,6 @@
 @extends('admin.index') @section('content')
 
-<script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <div class="breadcrumbs">
@@ -212,10 +212,10 @@
 
                                                         <?php     
                                                             if (isset($product->basic_image)) {
-                                                                $image1=asset('public/upload/product').'/'.$product->basic_image;
+                                                                $image1=asset('upload/product').'/'.$product->basic_image;
                                                             }
                                                             else{
-                                                                $image1=asset('public/admin/images/imgplaceholder.png');
+                                                                $image1=asset('admin/images/imgplaceholder.png');
                                                             }
                                                         ?>
                                                             <div class="upload-btn-wrapper">
@@ -237,7 +237,7 @@
                                                         <div id="additional_image" class="fleft">
                                                             @if($product->additional_image!="") @foreach($imagels as $imls)
                                                             <div id="imgid{{$i}}" class="add-img">
-                                                                <img src="{{asset('public/upload/product').'/'.$imls}}" class="img-thumbnail imgsize" id="additional_img{{$i}}" name="arrimg[]" />
+                                                                <img src="{{asset('upload/product').'/'.$imls}}" class="img-thumbnail imgsize" id="additional_img{{$i}}" name="arrimg[]" />
                                                                 <div class="add-box">
                                                                     <input type="button" id="removeImage1" value="x" class="btn-rmv1" onclick="removeimg('{{$i}}')" />
                                                                 </div>
@@ -250,7 +250,7 @@
                                                         <div class="upload-btn-wrapper">
                                                             <input type="hidden" name="add_total_img" id="add_total_img" value="0" />
                                                             <button class="btn imgcatlog">
-                                                                <img src="{{asset('public/upload/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
+                                                                <img src="{{asset('upload/add_image.png')}}" alt="..." class="img-thumbnail imgsize">
                                                             </button>
                                                             <input type="file" name="add_image" id="add_image" />
                                                         </div>
@@ -363,7 +363,7 @@
  @stop
  @section('footer')
 
-<script type="text/javascript" src="{{asset('public/js/product.js').'?v=59'}}"></script>
+<script type="text/javascript" src="{{asset('js/product.js').'?v=59'}}"></script>
   <script>
           CKEDITOR.replace('description');
       </script>

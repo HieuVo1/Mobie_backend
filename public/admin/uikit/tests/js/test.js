@@ -115,15 +115,13 @@
     }
 
     function toNodes(element) {
-        return isNode(element) ?
-            [element] :
+        return isNode(element) ? [element] :
             isNodeCollection(element) ?
             arrPrototype.slice.call(element) :
             isArray(element) ?
             element.map(toNode).filter(Boolean) :
             isJQuery(element) ?
-            element.toArray() :
-            [];
+            element.toArray() : [];
     }
 
     function each(obj, cb) {
@@ -426,8 +424,7 @@
             target.map(toEventTarget).filter(Boolean) :
             isString(target) ?
             findAll(target) :
-            isEventTarget(target) ?
-            [target] :
+            isEventTarget(target) ? [target] :
             toNodes(target);
     }
 
@@ -914,8 +911,8 @@
 
     var themes = request.status === 200 ? JSON.parse(request.responseText) : {};
     var styles = {
-        core: { css: '../dist/css/uikit-core.css' },
-        theme: { css: '../dist/css/uikit.css' }
+        core: { css: 'uikit/dist/css/uikit-core.css' },
+        theme: { css: 'uikit/dist/css/uikit.css' }
     };
     var component = location.pathname.split('/').pop().replace(/.html$/, '');
 
@@ -947,8 +944,8 @@
     document.writeln(("<link rel=\"stylesheet\" href=\"" + (dir !== 'rtl' ? style.css : style.css.replace('.css', '').concat('-rtl.css')) + "\">"));
 
     // add javascript
-    document.writeln('<script src="../dist/js/uikit.js"></script>');
-    document.writeln(("<script src=\"" + (style.icons ? style.icons : '../dist/js/uikit-icons.js') + "\"></script>"));
+    document.writeln('<script src="uikit/dist/js/uikit.js"></script>');
+    document.writeln(("<script src=\"" + (style.icons ? style.icons : 'uikit/dist/js/uikit-icons.js') + "\"></script>"));
 
     on(window, 'load', function() {
         return setTimeout(function() {

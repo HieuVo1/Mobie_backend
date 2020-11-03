@@ -71,7 +71,7 @@
                            <label for="name" class=" form-control-label">
                            {{__('messages.image')}}(542X370)
                            </label>
-                           <img src="{{asset('public/upload/category/image').'/'.$data->image}}" class="imgsize1" />
+                           <img src="{{asset('upload/category/image').'/'.$data->image}}" class="imgsize1" />
                            <input type="file" id="image" class="form-control" name="image" >
                         </div>
                         <div>

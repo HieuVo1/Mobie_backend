@@ -58,7 +58,7 @@ class OfferController extends Controller {
                 return $category->start_date."-".$category->end_date;
             })
             ->editColumn('banner', function ($category) {
-                return asset("public/upload/offer/image/")."/".$category->banner;
+                return asset("upload/offer/image/")."/".$category->banner;
             }) 
             ->editColumn('offer_on', function ($category) {
                 if($category->is_product=='1'){
@@ -139,7 +139,7 @@ class OfferController extends Controller {
                 return $category->id;
             })
             ->editColumn('banner', function ($category) {
-                 return asset("public/upload/offer/image/")."/".$category->banner;
+                 return asset("upload/offer/image/")."/".$category->banner;
             })
             ->editColumn('title', function ($category) {
                  return $category->title;
@@ -343,7 +343,7 @@ class OfferController extends Controller {
             })
             ->editColumn('banner', function ($category) {
                 if(isset($category->offer)){
-                 return asset("public/upload/offer/image/")."/".$category->offer->banner;
+                 return asset("upload/offer/image/")."/".$category->offer->banner;
                 }
             })
             ->editColumn('title', function ($category) {

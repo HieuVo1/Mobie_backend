@@ -27,7 +27,7 @@ class FeatureProductController extends Controller {
                 return $category->id;
             })
             ->editColumn('image', function ($category) {
-                  return asset('public/upload/product')."/".$category->productdata->basic_image;
+                  return asset('upload/product')."/".$category->productdata->basic_image;
             })
               ->editColumn('product', function ($category) {
                 return $category->productdata->name;

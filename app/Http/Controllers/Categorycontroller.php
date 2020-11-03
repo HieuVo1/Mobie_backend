@@ -200,7 +200,7 @@ class Categorycontroller extends Controller {
                 return $category->id;
             })
             ->editColumn('image', function ($category) {
-                return asset('public/upload/category/image')."/".$category->image;
+                return asset('upload/category/image')."/".$category->image;
             }) 
             ->editColumn('title', function ($category) {
                 return $category->title;

@@ -8,5 +8,6 @@ class ProductOption extends Model
 {
     protected $table = 'product_options';
     protected $primaryKey = 'id';
+    public $timestamps = false;
 }
 ?>
