@@ -298,7 +298,7 @@ class ProductController extends Controller
                 $data = base64_decode($image_parts[1]);
                 $folderName = '/upload/product/';
                 $destinationPath = public_path() . $folderName;
-                $file_name = uniqid() . $image_type;
+                $file_name = uniqid() .".". $image_type;
                 $file = $destinationPath . $file_name;
                 $success = file_put_contents($file, $data);
                 $store->basic_image = $file_name;
@@ -315,7 +315,7 @@ class ProductController extends Controller
                     $data = base64_decode($image_parts[1]);
                     $folderName = '/upload/product/';
                     $destinationPath = public_path() . $folderName;
-                    $file_name = uniqid() . $image_type;
+                    $file_name = uniqid() .".". $image_type;
                     $file = $destinationPath . $file_name;
                     $success = file_put_contents($file, $data);
                     $add_img[] = $file_name;

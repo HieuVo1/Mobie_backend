@@ -224,7 +224,7 @@
                                         <?php echo e(__('messages.banner')); ?> <?php if($data->offer_type=='1'): ?> (1110X424) <?php endif; ?> <?php if($data->offer_type=='2'): ?> (445X170) <?php endif; ?>
                                         <span class="reqfield">*</span>
                                     </label>
-                                    <img src="<?php echo e(asset('public/upload/offer/image').'/'.$data->banner); ?>" class="imgsize" />
+                                    <img src="<?php echo e(asset('upload/offer/image').'/'.$data->banner); ?>" class="imgsize" />
                                     <input type="file" id="banner" class="form-control" name="banner">
                                 </div>
                                   <?php if($data->offer_type==1): ?>
@@ -233,7 +233,7 @@
                                                  <?php echo e(__('messages.mobile_banner')); ?> 
                                            <span class="reqfield">*</span>
                                     </label>
-                                    <img src="<?php echo e(asset('public/upload/offer/image').'/'.$data->mobile_banner); ?>" class="imgsize" />
+                                    <img src="<?php echo e(asset('upload/offer/image').'/'.$data->mobile_banner); ?>" class="imgsize" />
                                     <input type="file" id="mobile_banner" class="form-control" name="mobile_banner" >
                                     <input type="hidden" name="real_mobile_image" id="real_mobile_image" value="<?php echo e($data->mobile_banner); ?>">
                                 </div> 

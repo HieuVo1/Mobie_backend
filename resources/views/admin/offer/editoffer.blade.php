@@ -207,7 +207,7 @@
                                         {{__('messages.banner')}} @if($data->offer_type=='1') (1110X424) @endif @if($data->offer_type=='2') (445X170) @endif
                                         <span class="reqfield">*</span>
                                     </label>
-                                    <img src="{{asset('public/upload/offer/image').'/'.$data->banner}}" class="imgsize" />
+                                    <img src="{{asset('upload/offer/image').'/'.$data->banner}}" class="imgsize" />
                                     <input type="file" id="banner" class="form-control" name="banner">
                                 </div>
                                   @if($data->offer_type==1)
@@ -216,7 +216,7 @@
                                                  {{__('messages.mobile_banner')}} 
                                            <span class="reqfield">*</span>
                                     </label>
-                                    <img src="{{asset('public/upload/offer/image').'/'.$data->mobile_banner}}" class="imgsize" />
+                                    <img src="{{asset('upload/offer/image').'/'.$data->mobile_banner}}" class="imgsize" />
                                     <input type="file" id="mobile_banner" class="form-control" name="mobile_banner" >
                                     <input type="hidden" name="real_mobile_image" id="real_mobile_image" value="{{$data->mobile_banner}}">
                                 </div> 
