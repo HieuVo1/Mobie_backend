@@ -230,9 +230,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("add_product_report/{start_date}/{end_date}","ReportController@add_product_report");
         Route::get("tax_report/{start_date}/{end_date}/{tax_name}","ReportController@tax_report");
         Route::get("shipping_report/{start_date}/{end_date}/{shipping_method}","ReportController@shipping_report");
-       Route::get("sales_report/{start_date}/{end_date}/{order_status}","ReportController@sales_report");
-       Route::get("product_stock_report/{product}/{sku}/{stock}","ReportController@product_stock_report");
-       Route::get("top_seller_report/{start_date}/{end_date}","ReportController@top_seller_report");
+        Route::get("sales_report/{start_date}/{end_date}/{order_status}","ReportController@sales_report");
+        Route::get("product_stock_report/{product}/{sku}/{stock}","ReportController@product_stock_report");
+        Route::get("top_seller_report/{start_date}/{end_date}","ReportController@top_seller_report");
 
         Route::get("latestorder","OrderController@latestorder")->name("latestorder");
         Route::get("latestreview","OrderController@latestreview")->name("latestreview");
