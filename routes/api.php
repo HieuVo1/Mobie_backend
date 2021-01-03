@@ -27,7 +27,7 @@ Route::get("categoryoffer","API\ApiController@categoryoffer");
 Route::any("bestselling/{user_id}","API\ApiController@bestselling");
 Route::any("mainoffers","API\ApiController@mainoffers");
 Route::get("viewproduct/{id}/{user_id}","API\ApiController@viewproduct");
-Route::any("productfilter","API\productfilterController@productfilter");
+Route::any("productfilter","API\ProductfilterController@productfilter");
 Route::any("addwish","API\ApiController@addwish");
 Route::get("login","API\ApiController@Showlogin");
 Route::any("verifiedcoupon","API\ApiController@verifiedcoupon");

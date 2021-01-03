@@ -216,7 +216,8 @@ class ApiController extends Controller
             $response = array("status" => 1, "msg" => "Order Placed Successfully", "data" => $store->id);
          } catch (\Exception $e) {
             DB::rollback();
-            $response = array("status" => 0, "msg" => "Something wrong", "data" => $e);
+            return Response::json(array($e));
+            //$response = array("status" => 0, "msg" => "Something wrong", "data" => $e);
          }
       }
       return Response::json(array("data" => $response));
@@ -510,7 +511,7 @@ class ApiController extends Controller
    {
       $best = array();
       $date = date("Y-m-d");
-      $bestoffer = Offer::where("offer_type", "1")->orderby('id', "DESC")->get();
+      $bestoffer = Offer::orderby('id', "DESC")->get();
       foreach ($bestoffer as $bo) {
          $start_date = date("Y-m-d", strtotime($bo->start_date));
          $end_date = date("Y-m-d", strtotime($bo->end_date));
@@ -653,7 +654,7 @@ class ApiController extends Controller
       } else {
          $avgStar = round($avgStar);
       }
-      $product->basic_image = asset('upload/product/') . '/' . $product->basic_image;
+      $product->basic_image = asset('upload/product/') . $product->basic_image;
       $product->avgStar = $avgStar;
       $response = array(
          'status' => 1,

@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://cryptic-lake-96358.herokuapp.com/'),
+    'url' => env('APP_URL', 'http://192.168.1.20:8080/'),
 
-    'asset_url' => env('ASSET_URL','https://cryptic-lake-96358.herokuapp.com/'),
+    'asset_url' => env('ASSET_URL',null),
 
     /*
     |--------------------------------------------------------------------------

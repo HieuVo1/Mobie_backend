@@ -29,7 +29,7 @@ class OrderController extends Controller {
                  $main_prod=array();
                  foreach ($orderdata as $k) {
                        $arr=array();
-                       $arr['basic_image']=asset('public/upload/product/').'/'.$k->productdata->basic_image;
+                       $arr['basic_image']=asset('upload/product/').'/'.$k->productdata->basic_image;
                        $arr["name"]=$k->productdata->name;
                        $getcategory=Categories::find($k->productdata->category);
                        $arr["category"]=$getcategory->name;
@@ -133,7 +133,7 @@ class OrderController extends Controller {
            $orderdata=OrderData::with('productdata')->where("order_id",$k->id)->get();
            $item=0;
            if(count($orderdata)!=0){
-              $image=asset('public/upload/product').'/'.$orderdata[0]->productdata->basic_image;
+              $image=asset('upload/product').'/'.$orderdata[0]->productdata->basic_image;
            }
            else{
               $image="";
@@ -171,7 +171,7 @@ class OrderController extends Controller {
            $orderdata=OrderData::with('productdata')->where("order_id",$k->id)->get();
            $item=0;
            if(count($orderdata)!=0){
-              $image=asset('public/upload/product').'/'.$orderdata[0]->productdata->basic_image;
+              $image=asset('upload/product').'/'.$orderdata[0]->productdata->basic_image;
            }
            else{
               $image="";
@@ -208,7 +208,7 @@ class OrderController extends Controller {
            $orderdata=OrderData::with('productdata')->where("order_id",$k->id)->get();
            $item=0;
            if(count($orderdata)!=0){
-              $image=asset('public/upload/product').'/'.$orderdata[0]->productdata->basic_image;
+              $image=asset('upload/product').'/'.$orderdata[0]->productdata->basic_image;
            }
            else{
               $image="";

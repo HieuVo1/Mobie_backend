@@ -113,7 +113,7 @@ class productfilterController extends Controller {
                          $k->wish=count($wish);
                          $re=Review::where("product_id",$k->id)->get();
                          $k->totalreview=count($re);
-                         $k->basic_image=asset('public/upload/product/').'/'.$k->basic_image;
+                         $k->basic_image=asset('upload/product/').'/'.$k->basic_image;
                          $k->price=$k->selling_price;
                          
                          unset($k->selling_price);

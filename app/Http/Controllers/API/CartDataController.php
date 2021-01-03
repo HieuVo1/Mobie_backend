@@ -93,7 +93,7 @@ class CartDataController extends Controller {
            $main_array=array();
            foreach ($getcartdata as $k) {
                $data=array();
-               $data['image']=asset('public/upload/product').'/'.$k->productdata->basic_image;
+               $data['image']=asset('upload/product').'/'.$k->productdata->basic_image;
                $data['name']=$k->productdata->name;
                $data['qty']=$k->qty;
                $data['price']=$k->price_product;
