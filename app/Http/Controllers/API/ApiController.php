@@ -178,25 +178,6 @@ class ApiController extends Controller
                $add->option_price = $k->exterdata->price;
                $add->save();
             }
-            if ($request->get("payment_type") == "Stripe") {
-
-               \Stripe\Stripe::setApiKey($setting->stripe_secret);
-               $unique_id = uniqid();
-               $charge = \Stripe\Charge::create(array(
-                  'description' => "Amount: " . $request->get("total_order_price") . ' - ' . $unique_id,
-                  'source' => $request->get("stripeToken"),
-                  'amount' => (int)($request->get("total_order_price") * 100),
-                  'currency' => 'USD'
-               ));
-               $data = Order::find($store->id);
-               $data->charges_id = $charge->id;
-               $data->save();
-            }
-            if ($request->get("payment_type") == "Paypal") {
-               $data = Order::find($store->id);
-               $data->pay_pal_paymentId = $request->get("pay_pal_paymentId");
-               $data->save();
-            }
 
             $data = array();
             $data['email'] = $setting->email;
@@ -216,8 +197,7 @@ class ApiController extends Controller
             $response = array("status" => 1, "msg" => "Order Placed Successfully", "data" => $store->id);
          } catch (\Exception $e) {
             DB::rollback();
-            return Response::json(array($e));
-            //$response = array("status" => 0, "msg" => "Something wrong", "data" => $e);
+            $response = array("status" => 0, "msg" => "Something wrong", "data" => $e);
          }
       }
       return Response::json(array("data" => $response));
