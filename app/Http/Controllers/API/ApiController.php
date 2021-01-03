@@ -180,7 +180,7 @@ class ApiController extends Controller
             }
 
             $data = array();
-            $data['email'] = $setting->email;
+            $data['email'] =  $request->get("order_email");
             $data['name'] = "Shop";
             $data['customer_name'] = $request->get("order_firstname") . " " . $request->get("order_lastname");
             $data['order_amount'] = $request->get("total_order_price");
