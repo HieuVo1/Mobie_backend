@@ -388,12 +388,7 @@ class OrderController extends Controller {
                              $order->save();
                              $user->order_msg=$msg;
                              $user->order_id=$order_id;
-                             if($setting->customer_order_status=='1'){
-                                 Mail::send('email.customer_order_status', ['user' => $user], function($message) use ($user){
-                                   $message->to($user->email,$user->first_name)->subject('shop on');
-                                 });
-                             }
-                              
+                       
                                DB::commit();
                                  Session::flash('message',__('messages_error_success.order_status_change')); 
                              Session::flash('alert-class', 'alert-success');
