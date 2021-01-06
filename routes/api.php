@@ -43,3 +43,4 @@ Route::any("searchproduct","API\ApiController@searchproduct");
 Route::get("removecart/{id}","API\CartDataController@removecart");
 Route::get("addcomplain","API\ApiController@addcomplain");
 Route::get("save_token","API\ApiController@save_token");
+Route::post("resetpassword","API\ApiController@resetpassword");

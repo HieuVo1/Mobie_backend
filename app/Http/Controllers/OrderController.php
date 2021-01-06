@@ -388,7 +388,8 @@ class OrderController extends Controller {
                              $order->save();
                              $user->order_msg=$msg;
                              $user->order_id=$order_id;
-                       
+   
+                              
                                DB::commit();
                                  Session::flash('message',__('messages_error_success.order_status_change')); 
                              Session::flash('alert-class', 'alert-success');

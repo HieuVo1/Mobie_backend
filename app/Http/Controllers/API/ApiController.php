@@ -266,6 +266,22 @@ class ApiController extends Controller
       return $response;
    }
 
+   public function resetpassword(Request $request)
+   {
+      $response = array("status" => "0", "msg" => "Validation error");
+      $setting = Setting::find(1);
+      $user = User::where("email", $request->get("email"))->where("is_email_verified", '1')->first();
+      if ($user) {
+         $user->password =  $request->get("password");
+         $user->save();
+         $response = array("status" => 1, "msg" => "Reset Password Successfully");
+            
+      } else {
+         $response = array("status" => 0, "msg" => "Something wrong");
+      }
+      return $response;
+   }
+
    public function editprofile(Request $request)
    {
       $response = array("status" => "0", "msg" => "Validation error");
@@ -326,14 +342,21 @@ class ApiController extends Controller
          $setting = Setting::find(1);
          $user = User::where("email", $request->get("email"))->get();
          if ($user) {
-
-            $response = array("status" => 0, "msg" => "Mail Send Successfully ");
+            $code  = rand(100000,999999);
+            if ($setting->admin_order_mail == '1') {
+               Mail::send('email.sendcode', ['code' => $code], function ($message) use ($request) {
+                  $message->to($request->get("email"))->subject('shop on');
+               });
+            }
+            $response = array("status" => 1, "msg" => "Mail Send Successfully","code"=>$code);
          } else {
             $response = array("status" => 0, "msg" => "Email Id Not Existe");
          }
       }
       return $response;
    }
+
+
    function getcode()
    {
       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
